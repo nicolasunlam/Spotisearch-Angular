@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SboxComponent } from './components/sbox/sbox.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FavsComponent } from './components/favs/favs.component';
+import { ArtistComponent } from './component/artist/artist.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FavsComponent } from './components/favs/favs.component';
     HeaderComponent,
     SboxComponent,
     FooterComponent,
-    FavsComponent
+    FavsComponent,
+    ArtistComponent
   ],
   imports: [
     BrowserModule,
