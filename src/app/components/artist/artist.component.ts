@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http'
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 
 @Component({
@@ -15,9 +15,9 @@ export class ArtistComponent implements OnInit {
    }
   
   ngOnInit() {
-   const searchQuery = 'Muse';
-    this._Http.get('https://api.spotify.com/v1/search?q=${searchQuery}&type=artist',{ headers: new HttpHeaders(
-      { Authorization:'Bearer BQAlK9A1a9lF7IoljjMUFwkr3O-f1hPP2i2z5RgOMDqNlPHi76qP4EZOlv33l0AWGFPqOXVFBnNFgKQGdx0voniTF4XqnfyeH1P-fQ09W3fk11lvZnmel-UFJh_TWrk5jUcTH8WYHdsmTngZi-RBq_2bIfveEs3d3v5D0e1J4l_5dHs'})
+   const id = '0TnOYISbd1XYRBk9myaseg';
+    this._Http.get('https://api.spotify.com/v1/artists/${id}/albums',{ headers: new HttpHeaders(
+      { Authorization:'Bearer BQBAKOCtrOiOA2eY2CU7Er-4yBtb14cq5PkX1XO65ssEZnCxwLZZG5ku6hWLvOaUX2J_0ixURx5AVLlvNOeKWZSBaKoPS2fH4PgO7bRLUQFa3Mnyu66P5EFKHcISGsIwxH21r3Au-uccgN_H-Iee3ilfdmitnmSFzamFqFPLtgLaGV8'})
     }).subscribe(({artist}: any) => {
       debugger
       this.artists = artist.items;
