@@ -11,7 +11,8 @@ import { SearchComponent } from './components/search/search.component';
 import { SearchService } from './services/search.service';
 import { HttpClient } from '@angular/common/http';
 import {HttpClientModule} from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ArtistComponent } from './components/artist/artist.component';
+
 
 
 @NgModule({
@@ -22,6 +23,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     FavsComponent,
     SearchComponent,
+    ArtistComponent,
+   
+   
     
   ],
   imports: [

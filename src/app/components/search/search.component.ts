@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { SearchService } from 'src/app/services/search.service';
-import { FormControl } from '@angular/forms';
 
 
 @Component({
@@ -9,19 +8,20 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent {
-  
+
   results: any[] [];
-  
+
   constructor(private _searchService: SearchService) { }
   
   search(queryString: string) {
     console.log(queryString);
     
-    this._searchService.getArtist( queryString )
+    this._searchService.searchArtist( queryString )
     .subscribe( (data: any) => {
       console.log(data);
       this.results = data;
     });
   }
+
   
 }

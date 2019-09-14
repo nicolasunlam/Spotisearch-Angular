@@ -1,3 +1,16 @@
-<form>
+<div class="queryString-wrapper">
   <input #queryString type="text" (keyup)="search(queryString.value)"name="search" class="form-control" placeholder="Search..">
-</form>
+</div>
+
+<div class="wrapper">
+    <ul class="filter-select">
+  <table>
+    <li *ngFor="let result of results" class="filter-select-list">
+  <tr>
+  <td><img src="{{result.images['2']?.url}}" alt="" width="150" height="150"></td>
+  <td><p class="artist-name">{{result.name}}</p></td>
+  <td><span class="tags" *ngFor='let genre of result?.genres | slice:0:6'>{{genre}}</span></td>
+  </tr>
+</table>
+</ul>
+</div>
