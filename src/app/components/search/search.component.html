@@ -4,11 +4,11 @@
 
 <div class="wrapper">
   <ul class="filter-select">
-    <a href="artist_page" target=""> 
-      <li class="item" *ngFor="let result of results" class="filter-select-list">
+    <a routerLink="/artist" routerLinkActive="active"> 
+      <li class="item" *ngFor="let result of results" class="filter-select-list"
+      (click)="onSelect(artist)">
         <img src="{{result.images['2']?.url}}" class="image" alt="" width="50" height="50">
         <p class="artist-name">{{result.name}}</p>
-        <!-- <a [href]="artista.external_urls.spotify" target="_blank"></a> -->
         <span class="tags" *ngFor='let genre of result?.genres | slice:0:6'>{{genre}}</span>
       </li>
     </a>

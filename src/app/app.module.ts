@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { RouterModule, Routes } from '@angular/router';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -13,7 +15,10 @@ import { HttpClient } from '@angular/common/http';
 import {HttpClientModule} from '@angular/common/http';
 import { ArtistComponent } from './components/artist/artist.component';
 
-
+const appRoutes: Routes = [
+  { path: 'search', component: SearchComponent },
+  { path: 'artist', component: ArtistComponent },
+];
 
 @NgModule({
   declarations: [
@@ -24,17 +29,23 @@ import { ArtistComponent } from './components/artist/artist.component';
     FavsComponent,
     SearchComponent,
     ArtistComponent,
-   
-   
+    
+    
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule 
-    
-  ],
-  providers: [SearchService, HttpClient],  
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
+    HttpClientModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+      )
+      
+      
+    ],
+    providers: [SearchService, HttpClient],  
+    bootstrap: [AppComponent]
+  })
+  export class AppModule { }
+  
