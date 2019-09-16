@@ -12,7 +12,7 @@ export class SearchService {
   
   search(queryString: string) {
     const url = `https://api.spotify.com/v1/${queryString}`;
-    const headers = new HttpHeaders({Authorization: "Bearer BQDEE0ruK0IdK5nwlu-04A9niTyYCgw9kBbBEWPft8jFRGMD030mYRy50dwGKC0KZ73U42UvtKUJNvopemT37jGWhYN44hQ0KFehHnRkj45juoPImBV6ovWCUUVlmDau6FgHtWOSrXHiNupOGgmi4xzj-dxsAaJbMn9cbAWYM3NiL4U"
+    const headers = new HttpHeaders({Authorization: "Bearer BQAPXHBcVbCcgwsBQn6Agon7YhgiSBJkrPHUQxe63wsUUJAOx7R2wceg-pw6OFYzjJI99w5akhtOYwjjnkhMMI6InesHfziGDKCkB8JuoDluMgAb831VFZhkI5IvQ6Q-SVhbYlBKr5o6Py9ZGNmn337UW8cW3vN8Sxxqq-MqHfz-Ddc"
   });
   
   return this._http.get(url, {headers});

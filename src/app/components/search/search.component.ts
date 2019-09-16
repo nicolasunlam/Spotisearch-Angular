@@ -8,9 +8,9 @@ import { SearchService } from 'src/app/services/search.service';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent {
-
+  
   results: any[] [];
-
+  
   constructor(private _searchService: SearchService) { }
   
   search(queryString: string) {
@@ -21,7 +21,5 @@ export class SearchComponent {
       console.log(data);
       this.results = data;
     });
-  }
-
-  
+  }  
 }
